@@ -3,10 +3,10 @@
 
 </head>
 
-<body>
+<body >
 <div class="container-fluid">
 <table class="table table-hover table-strip">
-	<thead class="table-dark">
+	<thead class="table-info">
  <tr >
  <th>order no</th>
  <th>name</th>
@@ -26,8 +26,8 @@
 <?php
 
 
-include 'conn.php';
-$sql= "select * from boardk";
+include 'sconn.php';
+$sql= "select * from boards";
 $result= $con->query($sql);
    if ($result->num_rows > 0) {
     // output data of each row
@@ -46,8 +46,8 @@ $result= $con->query($sql);
 	 "</td><td class='text-warning'>".$row["amount"].
 	 "</td><td class='text-danger'>".$row["advance"].
 	 "</td><td>".
-	 "<a class='btn btn-info' href='http://localhost/orderbook/edit.php?id=$row[id]'> edit</a>"."
-	 </td><td> <a  onclick='fun()' class='btn btn-danger' href='http://localhos/orderbook/delete.php?id=$row[id]'> delete</a></td> ";?> </tr></tbody>
+	 "<a class='btn btn-info' href='http://localhost/orderbook/sedit.php?id=$row[id]'> edit</a>"."
+	 </td><td> <a  onclick='fun()' class='btn btn-danger' href='http://localhos/orderbook/sdelete.php?id=$row[id]'> delete</a></td> ";?> </tr></tbody>
 	<?php
 		
     }

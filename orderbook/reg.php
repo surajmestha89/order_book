@@ -2,61 +2,58 @@
 
 <html>
 <head> <title> order book</title>
-<style>
-h1{
-	color:blue;
-}
-div{
-	
-		padding: 25px;
-		margin:auto;
-		text-align:center;
-	}
-	input{
-		 margin:12px;
-	}
- 
-	
-	
-</style>
 </head>
-<body>
-<h1 style="text-align:center"> NEW ORDER</h1> <hr>
-<div>
-<form method="post" action="insert.php">
-NAME:<input  id="i" type="text" name="name" required>
-<br>
-PLACE:<input type="text" name="place">
-<br>
-MOBILE NO:<input type="number" name="mob"><br>
-       
-BOAT NAME:<input type="text" name="bname"><br>
-MODEL:<select name="model"> 
-					
-					<option value="sada" >sada</option>
-					<option value="disco" >disco</option>
-					<option value="small" >small</option>
-			</select> <br>
-WEIGHT:<input type="number" name="kg">
-			<br>
-ORDER-DATE:<input type="date" name="odate"><br>
-DUE-DATE:<input type="date" name="ddate"><br>
-ADVANCE:<input type="number" name="adv"><br>
-PRICE:<input type="number" name="price">
-<br>
+<body  class="bg-light">
+	<div class="container">
+<h1 class="text-info"> NEW ORDER</h1> <hr>
+
+<form method="post" action="insert.php" >
+	<div class="form-group">
+<label> NAME:</label><input   class="form-control" type="text" name="name" required>
+</div>
+<div class="form-group">
+PLACE:<input class="form-control" type="text" name="place">
+</div>
+<div class="form-group">
+MOBILE NO:<input class="form-control" type="tel" name="mob">
+ </div> 
+ <div class="form-group">     
+BOAT NAME:<input class="form-control" type="text" name="bname">
+</div>
+<div class="form-group">
+MODEL:<select class="form-control" name="model"> 
+					<optgroup  class="bg-light"label="* BOAT">
+					<option  class="list-group-item "value="sada" >SADA</option>
+					<option class="list-group-item" value="disco" >DISCO</option>
+					</optgroup>
+					<optgroup  class="bg-light"label="* GILNET">
+					<option class="list-group-item" value="small" >small</option>
+				</optgroup>
+			</select> </div>	
+			<div class="form-group">
+WEIGHT:<input class="form-control" type="number" name="kg">
+			</div>
+			<div class="form-group">
+ORDER-DATE:<input value="<?php echo date("d-m-Y"); ?>"  type="date" name="odate"></div>
+<div class="form-group">
+DUE-DATE:<input  type="date" name="ddate"></div>
+<div class="form-group">
+ADVANCE:<input  class="form-control" type="number" name="adv"></div>
+<div class="form-group">
+PRICE:<input class="form-control" type="number" name="price">
+</div>
 
 			
-<button type="reset"> reset</button><br>
- <input type="submit" value="submit">
+<button class="btn btn-danger btn-block btn-mg " type="reset"> <b>RESET</b></button>
+
+ <button class="btn btn-success btn-block  btn-mg" type="submit"><b>SUBMIT</b></button>
+
 
 </form>
+</div>
 </div>
 </body>
 </html>
 
 
-<?php   /* <br>
-		<input type="radio" name="geder" value="femel"> female <br>
-		<input type="radio" name="geder" value="male">male <br>
-		<input type="radio" name="geder" value="other">other
-		<br>*/?>
+<?php   include 'conn.php'?>

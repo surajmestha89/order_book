@@ -1,12 +1,20 @@
+<?php include 'conn.php';
+?>
 <html>
-<body style="background:#f5f5f5">
-<center>
- <h2> <b>welcome to the order page</b><h2><hr>
- <a href="reg.php">click here to order new</a><br>
+<head><title> welcome to the page</title>
+	
+	</head>
+<body  class="bg-light">
 
- <a href="display.php">click here to view existing orders</a><br>
+		<div class=" container bg-light">
+ <h1 class="txt-info"> welcome to the order page<h1><hr>
+<div class="form-group">
+	
+ <a  href="reg.php">click here to order new</a></div>
 
+ <a  href="display.php">BOAT ORDER LIST</a>
+ <a href="small/sdisplay.php">GILNET ORDER LIST</a>
  
-</center>
+</div>
 </body>
 </html>
