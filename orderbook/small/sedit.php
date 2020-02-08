@@ -1,6 +1,6 @@
 <?php  
 
-$i=$_GET['id'];
+ $i=$_GET['id'];
 
 
 ?>
@@ -13,33 +13,41 @@ $i=$_GET['id'];
 <h1 class="text-info"> EDIT THE FORM</h1> <hr>
 <form method="post">
 	<div class="form-group">
-<label> NAME:</label><input   class="form-control" type="text" name="name" required>
+<label> NAME:</label><input   class="form-control-sm" type="text" name="name"  value="<?php echo $_GET['name']; ?>" disable>
 </div>
 <div class="form-group">
-PLACE:<input class="form-control" type="text" name="place">
+PLACE:<input class="form-control-sm" type="text" name="place"value="<?php echo $_GET['place']; ?>">
 </div>
 <div class="form-group">
-MOBILE NO:<input class="form-control" type="tel" name="mob">
+MOBILE NO:<input class="form-control-sm" type="tel" name="mob"value="<?php echo $_GET['mob']; ?>">
  </div> 
  <div class="form-group">     
-BOAT NAME:<input class="form-control" type="text" name="bname">
+BOAT NAME:<input class="form-control-sm" type="text" name="bname"value="<?php echo $_GET['bname']; ?>">
 </div>
 <div class="form-group">
-MODEL:<select class="form-control" name="model"> 
+MODEL:<select class="form-control-sm" name="model" value="<?php echo $_GET['model']; ?>"> 
 					
 					<option  class="list-group-item text-"value="sada" >sada</option>
 					<option class="list-group-item" value="disco" >disco</option>
-					<option class="list-group-item" value="small" >small</option>
+					
 			</select> </div>	
 			<div class="form-group">
-WEIGHT:<input class="form-control" type="number" name="kg">
+WEIGHT:<input class="form-control-sm" type="number" name="kg"value="<?php echo $_GET['weight']; ?>">
 			</div>
 		
 <div class="form-group">
-ADVANCE:<input  class="form-control" type="number" name="adv"></div>
+ADVANCE:<input  class="form-control-sm" type="number" name="adv"value="<?php echo $_GET['adv']; ?>"></div>
 <div class="form-group">
-PRICE:<input class="form-control" type="number" name="price">
+PRICE:<input class="form-control-sm" type="number" name="price"value="<?php echo $_GET['amount']; ?>">
 </div>
+<div class="form-group">
+<label class="bg-light "> <b>STATUS :</b> </label> 	<input type="radio" value="PAID" name="status"> PAID. 
+							<input type="radio" value="UNPAID" name="status">UNPAID.
+							<input type="radio" value="PARTIALI" name="status">PARTIAL.
+							
+
+
+	</div>		<br>
 
 			
 
@@ -67,22 +75,21 @@ $bname= $_POST['bname'];
 $weight=  $_POST['kg'];
 $adv=  $_POST['adv'];
 $price= $_POST['price'];
-
+$status=$_POST['status'];
 if(empty($_POST['adv']))
 {
 	$adv=0;
 }
 
 
-	$sql= "UPDATE boards set name='$name',place='$place', mob='$mob', bname='$bname', model='$model', weight='$weight', amount='$price', advance='$adv' WHERE id='$i'";
+	$sql= "UPDATE boards set name='$name',place='$place', mob='$mob', bname='$bname', model='$model', weight='$weight', amount='$price', advance='$adv',status='$status' WHERE id='$i'";
 
 	if($con->query($sql))
 	{
-		echo "<h2> UPDATED SUCCESSFULY</h2>"; 
+		echo "<div class='alert alert-warning' role='alert'> UPDATED SUCCESSFULY</div>"; 
 	}
 
-	header("Refresh: 5; url=http://localhost/orderbook/display.php");
-
+	
 	
 }
 

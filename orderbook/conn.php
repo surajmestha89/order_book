@@ -2,13 +2,14 @@
 <html>
 <head>
 	<title>connection</title>
-	<link rel="stylesheet" type="text/css" href="\orderbook\bootstrap\css\bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="\orderbook\bootstrap\css\bootstrap.css">
+
 </head>
 <body>
 
 
-<script type="text/javascript" src=""\orderbook\bootstrap\js\jquery.js"></script>
-<script type="text/javascript" src=""\orderbook\bootstrap\js\bootstrap.min.js.js"></script>
+<script type="text/javascript" src="\orderbook\bootstrap\js\jquery.js"></script>
+<script type="text/javascript" src="\orderbook\bootstrap\js\bootstrap.min.js"></script>
 </body>
 </html>
 
