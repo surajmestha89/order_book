@@ -13,6 +13,7 @@ $odate=  $_POST['odate'];
 $ddate=  $_POST['ddate'];
 $adv=  $_POST['adv'];
 $price= $_POST['price'];
+$status= $_POST['status'];
 }
 
 if(empty($_POST['adv']))
@@ -34,7 +35,7 @@ if($res->num_rows>0)
 }	
 $idd++;
 
-$sql="INSERT INTO `boards` (`id`, `name`, `place`, `mob`, `bname`, `model`, `weight`, `odate`, `ddate`, `amount`, `advance`) VALUES('$idd','$name','$place','$mob','$bname','$model','$weight','$odate','$ddate','$price','$adv')";
+$sql="INSERT INTO `boards` (`id`, `name`, `place`, `mob`, `bname`, `model`, `weight`, `odate`, `ddate`, `amount`, `advance`,`status`) VALUES('$idd','$name','$place','$mob','$bname','$model','$weight','$odate','$ddate','$price','$adv','$status')";
 if($con->query($sql)==true)
 {
 	echo "order is Registed customer name:   ".$name;	
@@ -58,7 +59,7 @@ if($res->num_rows>0)
 }	
 $idd++;
 
-$sql="INSERT INTO `boardk` (`id`, `name`, `place`, `mob`, `bname`, `model`, `weight`, `odate`, `ddate`, `amount`, `advance`) VALUES('$idd','$name','$place','$mob','$bname','$model','$weight','$odate','$ddate','$price','$adv')";
+$sql="INSERT INTO `boardk` (`id`, `name`, `place`, `mob`, `bname`, `model`, `weight`, `odate`, `ddate`, `amount`, `advance`,`status`) VALUES('$idd','$name','$place','$mob','$bname','$model','$weight','$odate','$ddate','$price','$adv','$status')";
 if($con->query($sql)==true)
 {
 	echo "order is Registed customer name:   ".$name;	

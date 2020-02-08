@@ -3,10 +3,12 @@
 
 </head>
 
-<body >
+<body>
 <div class="container-fluid">
-<table class="table table-hover table-strip">
-	<thead class="table-info">
+	<div class="bg-dark text-white text-center pb-3 pt-2"><b> <h2> GILNET ORDER LIST</h2><b></div>
+
+<table class="table table-hover table-strip pt-3">
+	<thead class="table-info text-dark">
  <tr >
  <th>order no</th>
  <th>name</th>
@@ -19,6 +21,7 @@
  <th>Due_Date</th>
  <th>Price </th>
  <th>Advance</th>
+ <th>status</th>
  <th colspan="2">operation</th>
  </tr>
 </thead>
@@ -45,9 +48,10 @@ $result= $con->query($sql);
 	 " </td> <td>".$row["ddate"].
 	 "</td><td class='text-warning'>".$row["amount"].
 	 "</td><td class='text-danger'>".$row["advance"].
-	 "</td><td>".
-	 "<a class='btn btn-info' href='http://localhost/orderbook/sedit.php?id=$row[id]'> edit</a>"."
-	 </td><td> <a  onclick='fun()' class='btn btn-danger' href='http://localhos/orderbook/sdelete.php?id=$row[id]'> delete</a></td> ";?> </tr></tbody>
+	 "</td><td>".$row["status"].
+	 " </td><td>".
+	 "<a class='btn btn-info' href='http://localhost/orderbook/small/sedit.php?id=$row[id]&name=$row[name]&place=$row[place]&mob=$row[mob]&bname=$row[bname]&model=$row[model]&weight=$row[weight]&odate=$row[odate]&amount=$row[amount]&adv=$row[advance]&status=$row[status]'> edit</a>"."
+	 </td><td> <a  onclick='fun()' class='btn btn-danger' href='http://localhos/orderbook/small/sdelete.php?id=$row[id]'> delete</a></td> ";?> </tr></tbody>
 	<?php
 		
     }
